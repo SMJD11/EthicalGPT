@@ -28,7 +28,7 @@ function Home() {
 
     // Send a request to an API that can answer ethical questions
     axios
-      .get("https://ethical-questions-api.com/answer", {
+      .get("OPenAPI", {
         params: {
           question: question,
           stance: stance,
