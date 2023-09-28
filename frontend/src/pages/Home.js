@@ -65,7 +65,7 @@ function Home() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            EthicalGPT - Ethical AI
+            Ethical AI
           </Typography>
           <Button color="inherit" href="/">
             Home
