@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
+import Popup from "../component/Popup";
 const API_TOKEN = "token"
 // Define a custom component for the home page screen
 function Home() {
@@ -57,6 +58,8 @@ function Home() {
       ]);
   };
   // Return the JSX code for rendering the home page screen
+  const[buttonPopup, setButtonPopup] = useState(false);
+  const[aboutbuttonPopup, setAboutButtonPopup] = useState(false);
   return (
     <div className="home">
       <AppBar position="static">
@@ -67,12 +70,18 @@ function Home() {
           <Button color="inherit" href="/">
             Home
           </Button>
-          <Button color="inherit" href="/about">
+          <Button onClick = {() => setAboutButtonPopup(true)} color="inherit" >
             About Us
           </Button>
-          <Button color="inherit" href="/how-to-use">
+          <Popup trigger={aboutbuttonPopup} setTrigger= {setAboutButtonPopup}>
+              <h2 style={{color : 'black'}}>About Us</h2>
+          </Popup>
+          <Button onClick = {() => setButtonPopup(true)} color="inherit" >
             How to Use
           </Button>
+          <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
+              <h2 style={{color : 'black'}}>How to Use</h2>
+          </Popup>
         </Toolbar>
       </AppBar>
       <div className="input-box">
@@ -105,6 +114,7 @@ function Home() {
         )}
       </div>
     </div>
+    
   );
 }
 
