@@ -88,7 +88,7 @@ function Home() {
         <TextField
           id="question"
           name="question"
-          label="Type in an ethical question"
+          placeholder="Type in an ethical question"
           variant="outlined"
           fullWidth
           value={question}
