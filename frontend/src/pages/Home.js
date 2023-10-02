@@ -10,6 +10,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import Popup from "../component/Popup";
+import { Box } from "@mui/material";
 
 // Define a custom component for the home page screen
 function Home() {
@@ -72,7 +73,7 @@ function Home() {
           </Popup>
         </Toolbar>
       </AppBar>
-      <div className="input-box">
+      <Box m="2rem 10rem 2rem 10rem">
         <TextField
           id="question"
           name="question"
@@ -82,18 +83,18 @@ function Home() {
           value={question}
           onChange={handleChange}
         />
-      </div>
-      <div className="button-choices">
-        <Button variant="contained" color="primary" value="for" onClick={handleClick}>
+      </Box>
+      <Box style={{ width: "100%", height: "100%", display: "flex", flexDirection: "row", gap: "2rem", alignItems: "center", justifyContent: "center"}}>
+        <Button style={{width: "10rem", backgroundColor: "green"}} variant="contained" value="for" onClick={handleClick}>
           For
         </Button>
-        <Button variant="contained" color="secondary" value="against" onClick={handleClick}>
+        <Button style={{width: "10rem", backgroundColor: "red"}} variant="contained" color="secondary" value="against" onClick={handleClick}>
           Against
         </Button>
-        <Button variant="contained" color="primary" value="neutral" onClick={handleClick}>
+        <Button style={{width: "10rem"}} variant="contained" color="primary" value="neutral" onClick={handleClick}>
           Neutral
         </Button>
-      </div>
+      </Box>
       <div className="result">
         {result && (
           <Alert severity={result.severity}>
