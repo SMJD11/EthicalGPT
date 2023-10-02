@@ -1,5 +1,7 @@
 // Import React and other necessary libraries
-import React, { useState } from "react";
+import React, {
+  useState
+} from "react";
 import axios from "axios";
 
 // Import Material UI components
@@ -11,7 +13,7 @@ import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import Popup from "../component/Popup";
 import { Box } from "@mui/material";
-
+const API_TOKEN = "token"
 // Define a custom component for the home page screen
 function Home() {
   // Use state hooks to store the user input and the result
@@ -20,32 +22,42 @@ function Home() {
 
   // Define a function to handle the user input change
   const handleChange = (event) => {
-    setQuestion(event.target.value);
+      setQuestion(event.target.value);
   };
 
   // Define a function to handle the button click
   const handleClick = (event) => {
-    // Get the button value
-    const stance = event.target.value;
-
-    // Send a request to an API that can answer ethical questions
-    axios
-      .get("OPenAPI", {
-        params: {
-          question: question,
-          stance: stance,
-        },
-      })
-      .then((response) => {
-        // Set the result state with the response data
-        setResult(response.data);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+      // Get the button value
+      const stance = event.target.value;
+      // Query the API with the user input and the button value using axios
+      /*async function query(data) {
+          const response = await fetch(
+              "api", {
+                  headers: {
+                      Authorization: `Bearer ${API_TOKEN}`
+                  },
+                  method: "post",
+                  body: JSON.stringify(data),
+              }
+          );
+          const result = await response.json();
+          return result;
+      }
+      if (result) {
+          query({
+              inputs: "write an ethical arugment that is " + stance + " the following: " + question
+          }).then((response) => {
+              console.log(response);
+              console.log(JSON.stringify(response));
+              setResult(JSON.stringify(response));
+          });
+      }*/
+      console.log('the stance: ' + stance + '\n\nthe question: ' + question);
+      setResult(['the stance: ' + stance, <
+          br / > ,
+          'the question: ' + question
+      ]);
   };
-
   // Return the JSX code for rendering the home page screen
   const[buttonPopup, setButtonPopup] = useState(false);
   const[aboutbuttonPopup, setAboutButtonPopup] = useState(false);
@@ -54,7 +66,7 @@ function Home() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Organization Name
+            Ethical AI
           </Typography>
           <Button color="inherit" href="/">
             Home
@@ -77,7 +89,7 @@ function Home() {
         <TextField
           id="question"
           name="question"
-          label="Type in an ethical question"
+          placeholder="Type in an ethical question"
           variant="outlined"
           fullWidth
           value={question}
@@ -97,9 +109,8 @@ function Home() {
       </Box>
       <div className="result">
         {result && (
-          <Alert severity={result.severity}>
-            The answer to your question is: {result.answer}. The reasoning is:
-            {result.reasoning}.
+          <Alert>
+            {result}
           </Alert>
         )}
       </div>
