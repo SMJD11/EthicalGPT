@@ -75,7 +75,15 @@ function Home() {
             About Us
           </Button>
           <Popup trigger={aboutbuttonPopup} setTrigger= {setAboutButtonPopup}>
-              <h2 style={{color : 'black'}}>About Us</h2>
+          <h2 style={{color : 'black'}}>ABOUT US</h2>
+              <h4 style={{color : 'black'}}>Safwan Majeed</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time.</p>
+              <h4 style={{color : 'black'}}>Michael Castle</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+              <h4 style={{color : 'black'}}>Christo Karahalios</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+              <h4 style={{color : 'black'}}>Ben King</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
           </Popup>
           <Button onClick = {() => setButtonPopup(true)} color="inherit" >
             How to Use
