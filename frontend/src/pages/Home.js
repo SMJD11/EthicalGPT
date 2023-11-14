@@ -1,9 +1,9 @@
 // Import React and other necessary libraries
+import OpenAI from "openai";
 import React, {
   useState
 } from "react";
 import axios from "axios";
-
 // Import Material UI components
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,54 +13,51 @@ import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import Popup from "../component/Popup";
 import { Box } from "@mui/material";
-const API_TOKEN = "token"
+import CircularProgress from "@mui/material/CircularProgress";
+//environment variable from .env file
 // Define a custom component for the home page screen
+//const API_TOKEN = ;
+//console.log(API_TOKEN);
+const openai = new OpenAI({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,//process.env["OPENAI_API_KEY"],
+  dangerouslyAllowBrowser: true,
+});
 function Home() {
   // Use state hooks to store the user input and the result
   const [question, setQuestion] = useState("");
   const [result, setResult] = useState("");
-
+  const [loading, setLoading] = useState(false); // Use a state hook to store the loading status
   // Define a function to handle the user input change
   const handleChange = (event) => {
-      setQuestion(event.target.value);
+    setQuestion(event.target.value);
   };
-
   // Define a function to handle the button click
-  const handleClick = (event) => {
-      // Get the button value
-      const stance = event.target.value;
-      // Query the API with the user input and the button value using axios
-      /*async function query(data) {
-          const response = await fetch(
-              "api", {
-                  headers: {
-                      Authorization: `Bearer ${API_TOKEN}`
-                  },
-                  method: "post",
-                  body: JSON.stringify(data),
-              }
-          );
-          const result = await response.json();
-          return result;
-      }
-      if (result) {
-          query({
-              inputs: "write an ethical arugment that is " + stance + " the following: " + question
-          }).then((response) => {
-              console.log(response);
-              console.log(JSON.stringify(response));
-              setResult(JSON.stringify(response));
-          });
-      }*/
-      console.log('the stance: ' + stance + '\n\nthe question: ' + question);
-      setResult(['the stance: ' + stance, <
-          br / > ,
-          'the question: ' + question
-      ]);
+  const handleClick = async (event) => { // Add async keyword
+    // Get the button value
+    // Use await keyword to get the chat completion result
+    const stance = event.target.value;
+    setLoading(true); // Set the loading status to true before calling the API
+    const chatCompletion = await openai.chat.completions.create({
+      messages: [
+        {
+          role: 'system',
+          content:'You are an assistant that only answers ethical questions. Three options will be past to you at the beginning of the user request: for, against, nuetral. You must answer the question in line with the option passed. If the question is not an ethical question, say: I only answer ethical question.'
+        },
+        {
+          role: 'user',
+          content: stance + " " + question
+        }
+      ], // Use the question state as the user message
+      model: 'gpt-3.5-turbo',
+      max_tokens: 100,
+    });
+    // Use the response field of the chat completion result as the result state
+    setResult(chatCompletion.choices[0].message.content);
+    setLoading(false); // Set the loading status to false after getting the result
   };
   // Return the JSX code for rendering the home page screen
-  const[buttonPopup, setButtonPopup] = useState(false);
-  const[aboutbuttonPopup, setAboutButtonPopup] = useState(false);
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [aboutbuttonPopup, setAboutButtonPopup] = useState(false);
   return (
     <div className="home">
       <AppBar position="static">
@@ -71,17 +68,17 @@ function Home() {
           <Button color="inherit" href="/">
             Home
           </Button>
-          <Button onClick = {() => setAboutButtonPopup(true)} color="inherit" >
+          <Button onClick={() => setAboutButtonPopup(true)} color="inherit" >
             About Us
           </Button>
-          <Popup trigger={aboutbuttonPopup} setTrigger= {setAboutButtonPopup}>
-              <h2 style={{color : 'black'}}>About Us</h2>
+          <Popup trigger={aboutbuttonPopup} setTrigger={setAboutButtonPopup}>
+            <h2 style={{ color: 'black' }}>About Us</h2>
           </Popup>
-          <Button onClick = {() => setButtonPopup(true)} color="inherit" >
+          <Button onClick={() => setButtonPopup(true)} color="inherit" >
             How to Use
           </Button>
-          <Popup trigger={buttonPopup} setTrigger= {setButtonPopup}>
-              <h2 style={{color : 'black'}}>How to Use</h2>
+          <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <h2 style={{ color: 'black' }}>How to Use</h2>
           </Popup>
         </Toolbar>
       </AppBar>
@@ -96,18 +93,21 @@ function Home() {
           onChange={handleChange}
         />
       </Box>
-      <Box style={{ width: "100%", height: "100%", display: "flex", flexDirection: "row", gap: "2rem", alignItems: "center", justifyContent: "center"}}>
-        <Button style={{width: "10rem", backgroundColor: "green"}} variant="contained" value="for" onClick={handleClick}>
+      <Box style={{ width: "100%", height: "100%", display: "flex", flexDirection: "row", gap: "2rem", alignItems: "center", justifyContent: "center" }}>
+        <Button style={{ width: "10rem", backgroundColor: "green" }} variant="contained" value="for" onClick={handleClick}>
           For
         </Button>
-        <Button style={{width: "10rem", backgroundColor: "red"}} variant="contained" color="secondary" value="against" onClick={handleClick}>
+        <Button style={{ width: "10rem", backgroundColor: "red" }} variant="contained" color="secondary" value="against" onClick={handleClick}>
           Against
-        </Button>
-        <Button style={{width: "10rem"}} variant="contained" color="primary" value="neutral" onClick={handleClick}>
+     </Button>
+        <Button style={{ width: "10rem" }} variant="contained" color="primary" value="neutral" onClick={handleClick}>
           Neutral
         </Button>
-      </Box>
-      <div className="result">
+</Box>
+   <div className="result">
+        {loading && (
+          <CircularProgress /> // Display the loading animation while waiting for the result
+        )}
         {result && (
           <Alert>
             {result}
@@ -115,9 +115,8 @@ function Home() {
         )}
       </div>
     </div>
-    
+
   );
 }
-
 // Export the component
 export default Home;
