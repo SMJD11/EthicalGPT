@@ -3,7 +3,6 @@ import OpenAI from "openai";
 import React, {
   useState
 } from "react";
-import axios from "axios";
 // Import Material UI components
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
