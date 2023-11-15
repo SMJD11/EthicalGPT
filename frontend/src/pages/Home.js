@@ -84,6 +84,7 @@ function Home() {
           </Button>
           <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
             <h2 style={{ color: 'black' }}>How to Use</h2>
+               <h4 style={{color : 'black'}}>Enter an ethical question and select whether you want an answer that is for, against, or neutral. Once you select what response you want wait for the generative AI to create a response and It will be displayed on the screen.</h4>
           </Popup>
         </Toolbar>
       </AppBar>
