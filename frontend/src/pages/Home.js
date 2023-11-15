@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import Popup from "../component/Popup";
 import { Box } from "@mui/material";
-const API_TOKEN = "token"
+import CircularProgress from '@mui/material/CircularProgress';
 // Define a custom component for the home page screen
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY,//process.env["OPENAI_API_KEY"],
