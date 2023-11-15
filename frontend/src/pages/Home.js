@@ -15,7 +15,7 @@ import { Box } from "@mui/material";
 import CircularProgress from '@mui/material/CircularProgress';
 // Define a custom component for the home page screen
 const openai = new OpenAI({
-  apiKey: process.env.REACT_APP_OPENAI_API_KEY, //process.env["OPENAI_API_KEY"],
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,//process.env["OPENAI_API_KEY"],
   dangerouslyAllowBrowser: true,
 });
 function Home() {
@@ -38,7 +38,7 @@ function Home() {
       messages: [
         {
           role: 'system',
-          content: 'You only answer questions related to ethics. Three options will be past to you at the beginning of the user request: for, against, nuetral. You must answer the question in line with the option passed. If for is passed, your answer must be for the argument and not give any other stance. If against is passed, your answer must be against the argument and not give any other stance. If neutral is passed, your answer must be neutral. If the question is not an ethical question, say: I only answer ethical question.'
+          content: 'You only answer questions. Three options will be past to you at the beginning of the user request: for, against, nuetral. You must answer the question in line with the option passed. If for is passed, your answer must be for the argument and not give any other stance. If against is passed, your answer must be against the argument and not give any other stance. If neutral is passed, your answer must be neutral. If the question is not an ethical question, say: I only answer ethical question.'
         },
         {
           role: 'user',
@@ -112,7 +112,7 @@ function Home() {
       <div className="result">
         {loading && (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
-             {/* <CircularProgress/> */}
+             <CircularProgress/>
           </div>)}
         {result && (
           <Alert style={{ fontSize: '20px' }}>
