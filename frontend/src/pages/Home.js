@@ -15,7 +15,7 @@ import { Box } from "@mui/material";
 import CircularProgress from '@mui/material/CircularProgress';
 // Define a custom component for the home page screen
 const openai = new OpenAI({
-  apiKey: process.env.REACT_APP_OPENAI_API_KEY,//process.env["OPENAI_API_KEY"],
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY, //process.env["OPENAI_API_KEY"],
   dangerouslyAllowBrowser: true,
 });
 function Home() {
@@ -112,7 +112,7 @@ function Home() {
       <div className="result">
         {loading && (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
-             <CircularProgress/>
+             {/* <CircularProgress/> */}
           </div>)}
         {result && (
           <Alert style={{ fontSize: '20px' }}>
