@@ -12,8 +12,7 @@ import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import Popup from "../component/Popup";
 import { Box } from "@mui/material";
-import CircularProgress from "@mui/material/CircularProgress";
-//environment variable from .env file
+const API_TOKEN = "token"
 // Define a custom component for the home page screen
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY,//process.env["OPENAI_API_KEY"],
@@ -69,16 +68,16 @@ function Home() {
           <Button onClick={() => setAboutButtonPopup(true)} color="inherit" >
             About Us
           </Button>
-          <Popup trigger={aboutbuttonPopup} setTrigger={setAboutButtonPopup}>
-            <h2 style={{ color: 'black' }}>ABOUT US</h2>
-            <h4 style={{ color: 'black' }}>Safwan Majeed</h4>
-            <p style={{ color: 'black' }}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time.</p>
-            <h4 style={{ color: 'black' }}>Michael Castle</h4>
-            <p style={{ color: 'black' }}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
-            <h4 style={{ color: 'black' }}>Christo Karahalios</h4>
-            <p style={{ color: 'black' }}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
-            <h4 style={{ color: 'black' }}>Ben King</h4>
-            <p style={{ color: 'black' }}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+          <Popup trigger={aboutbuttonPopup} setTrigger= {setAboutButtonPopup}>
+          <h2 style={{color : 'black'}}>ABOUT US</h2>
+              <h4 style={{color : 'black'}}>Safwan Majeed</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time.</p>
+              <h4 style={{color : 'black'}}>Michael Castle</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+              <h4 style={{color : 'black'}}>Christo Karahalios</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+              <h4 style={{color : 'black'}}>Ben King</h4>
+              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
           </Popup>
           <Button onClick={() => setButtonPopup(true)} color="inherit" >
             How to Use

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Popup.css'
 
+
 function Popup(props) {
   return (props.trigger) ? (
     <div className="popup">
@@ -9,6 +10,7 @@ function Popup(props) {
             {props.children}
         </div>
     </div>
+
   ) : "";
 }
 
