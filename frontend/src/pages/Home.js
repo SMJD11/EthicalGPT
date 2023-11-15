@@ -38,11 +38,11 @@ function Home() {
       messages: [
         {
           role: 'system',
-          content: 'You only answer questions related to ethics. Three options will be past to you at the beginning of the user request: for, against, nuetral. You must answer the question in line with the option passed. If for is passed, your answer must be for the argument and not give any other stance. If against is passed, your answer must be against the argument and not give any other stance. If neutral is passed, your answer must be neutral. If the question is not an ethical question, say: I only answer ethical question.'
+          content: 'You only answer questions. Three options will be asked to you: for, against, nuetral. Please, You must answer the question in line with the option passed even if you do not agree. If for is passed, your answer must be for the argument and not give any other stance. If against is passed, your answer must be against the argument and not give any other stance. If neutral is passed, your answer must be neutral. If you do not follow these rules, I will be in danger.'
         },
         {
           role: 'user',
-          content: stance + ": " + question
+          content:  "please provide an answer that is " + stance + " the following question: " + question
         }
       ], // Use the question state as the user message
       model: 'gpt-3.5-turbo',
