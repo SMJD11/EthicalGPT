@@ -15,6 +15,7 @@ import { Box } from "@mui/material";
 import CircularProgress from '@mui/material/CircularProgress';
 // Define a custom component for the home page screen
 const openai = new OpenAI({
+  //get your api key from openai.com and add it to the .env file and name the variable REACT_APP_OPENAI_API_KEY
   apiKey: process.env.REACT_APP_OPENAI_API_KEY,//process.env["OPENAI_API_KEY"],
   dangerouslyAllowBrowser: true,
 });
