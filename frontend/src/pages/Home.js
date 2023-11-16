@@ -74,7 +74,7 @@ function Home() {
               <h4 style={{color : 'black', fontFamily: 'monospace'}}>Safwan Majeed</h4>
               <p style={{color : 'black', fontFamily: 'monospace'}}>Safwan Majeed is a computer science Major at Southern Methodist University who has experience in various programming languages, machine learning, and medical research. He is interested in the intersection of computer science and medicine.</p>
               <h4 style={{color : 'black', fontFamily: 'monospace'}}>Michael Castle</h4>
-              <p style={{color : 'black', fontFamily: 'monospace'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+              <p style={{color : 'black', fontFamily: 'monospace'}}>Michael Castle is from Las Vegas, Nevada. He is a Junior Computer Science Major at Southern Methodist University. He enjoys getting involved on campus and hopes to combine his leadership and technical skills after school.</p>
               <h4 style={{color : 'black', fontFamily: 'monospace'}}>Christo Karahalios</h4>
               <p style={{color : 'black', fontFamily: 'monospace'}}>Christo Karahalios is a Junior attending Southern Methodist University, majoring in Computer Science, Data Science, and Economics. He loves to code and solve problems, specializing in C++. He also enjoys creating algorithmic solutions in Rust.</p>
               <h4 style={{color : 'black', fontFamily: 'monospace'}}>Ben King</h4>
