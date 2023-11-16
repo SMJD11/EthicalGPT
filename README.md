@@ -5,12 +5,13 @@ EthicalAi is a project that aims to better understand the pros and cons of ethic
 ## Features
 
 - A web application that allows users to interact with an AI model
+
 ## Installation
 
 To run this project locally, follow these steps:
 
 - Navigate to the frontend directory using `cd frontend`
-- add .env file the frontend file with openAi api key defined as `REACT_APP_OPENAI_API_KEY = apikey` 
+- add .env file to the frontend file with the openAi api key defined as `REACT_APP_OPENAI_API_KEY = apikey` 
 - Install the dependencies using `npm install`
 - Start the development server using `npm start`
 
