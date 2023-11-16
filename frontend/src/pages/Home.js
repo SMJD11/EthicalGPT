@@ -74,11 +74,15 @@ function Home() {
               <h4 style={{color : 'black'}}>Safwan Majeed</h4>
               <p style={{color : 'black'}}>Safwan Majeed is a computer science Major at Southern Methodist University who has experience in various programming languages, machine learning, and medical research. He is interested in the intersection of computer science and medicine.</p>
               <h4 style={{color : 'black'}}>Michael Castle</h4>
-              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+              <p style={{color : 'black'}}>Michael is a Junior Computer Science Major at SMU from Las Vegas, Nevada. He enjoys spending time with friends and getting involved in campus organizations. He prefers to code in C++ and aspires to stay in Dallas with his sister after graduation. </p>
               <h4 style={{color : 'black'}}>Christo Karahalios</h4>
               <p style={{color : 'black'}}>Christo Karahalios is a Junior attending Southern Methodist University, majoring in Computer Science, Data Science, and Economics. He loves to code and solve problems, specializing in C++. He also enjoys creating algorithmic solutions in Rust.</p>
               <h4 style={{color : 'black'}}>Ben King</h4>
               <p style={{color : 'black'}}>Ben King is a sophmore at SMU with plans of majoring or minoring in computer science. He grew up in Atlanta, GA. He likes to fish and play soccer along with coding. </p>
+          <img src="/Michael.png"/>
+          <img src="/Ben.png"/>
+          <img src="/Safwan.png"/>
+          <img src="/Christo.png"/>
           </Popup>
           <Button onClick={() => setButtonPopup(true)} color="inherit" >
             How to Use
