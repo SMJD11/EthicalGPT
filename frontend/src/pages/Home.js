@@ -59,37 +59,37 @@ function Home() {
   return (
     <div className="home">
       <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Toolbar sx={{ backgroundColor: 'black' }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 , fontFamily: 'monospace'}}>
             Ethical AI
           </Typography>
-          <Button color="inherit" href="/">
+          <Button color="inherit" href="/" sx={{fontFamily: 'monospace'}}>
             Home
           </Button>
-          <Button onClick={() => setAboutButtonPopup(true)} color="inherit" >
+          <Button onClick={() => setAboutButtonPopup(true)} color="inherit" sx={{fontFamily: 'monospace'}}>
             About Us
           </Button>
           <Popup trigger={aboutbuttonPopup} setTrigger= {setAboutButtonPopup}>
-          <h2 style={{color : 'black'}}>ABOUT US</h2>
-              <h4 style={{color : 'black'}}>Safwan Majeed</h4>
-              <p style={{color : 'black'}}>Safwan Majeed is a computer science Major at Southern Methodist University who has experience in various programming languages, machine learning, and medical research. He is interested in the intersection of computer science and medicine.</p>
-              <h4 style={{color : 'black'}}>Michael Castle</h4>
-              <p style={{color : 'black'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
-              <h4 style={{color : 'black'}}>Christo Karahalios</h4>
-              <p style={{color : 'black'}}>Christo Karahalios is a Junior attending Southern Methodist University, majoring in Computer Science, Data Science, and Economics. He loves to code and solve problems, specializing in C++. He also enjoys creating algorithmic solutions in Rust.</p>
-              <h4 style={{color : 'black'}}>Ben King</h4>
-              <p style={{color : 'black'}}>Ben King is a sophmore at SMU with plans of majoring or minoring in computer science. He grew up in Atlanta, GA. He likes to fish and play soccer along with coding. </p>
+          <h2 style={{color : 'black' , fontFamily: 'monospace'}}>ABOUT US</h2>
+              <h4 style={{color : 'black', fontFamily: 'monospace'}}>Safwan Majeed</h4>
+              <p style={{color : 'black', fontFamily: 'monospace'}}>Safwan Majeed is a computer science Major at Southern Methodist University who has experience in various programming languages, machine learning, and medical research. He is interested in the intersection of computer science and medicine.</p>
+              <h4 style={{color : 'black', fontFamily: 'monospace'}}>Michael Castle</h4>
+              <p style={{color : 'black', fontFamily: 'monospace'}}>There was a time and a place for Stephanie to use her magic. The problem was that she had a difficult time determining this. She wished she could simply use it when the desire hit and there wouldn't be any unforeseen consequences. Unfortunately, that's not how it worked and the consequences could be devastating if she accidentally used her magic at the wrong time</p>
+              <h4 style={{color : 'black', fontFamily: 'monospace'}}>Christo Karahalios</h4>
+              <p style={{color : 'black', fontFamily: 'monospace'}}>Christo Karahalios is a Junior attending Southern Methodist University, majoring in Computer Science, Data Science, and Economics. He loves to code and solve problems, specializing in C++. He also enjoys creating algorithmic solutions in Rust.</p>
+              <h4 style={{color : 'black', fontFamily: 'monospace'}}>Ben King</h4>
+              <p style={{color : 'black', fontFamily: 'monospace'}}>Ben King is a sophmore at SMU with plans of majoring or minoring in computer science. He grew up in Atlanta, GA. He likes to fish and play soccer along with coding. </p>
           <img src="/Safwan.png"/>
           <img src="/Michael.png"/>
           <img src="/Christo.png"/>
           <img src="/Ben.png"/>
           </Popup>
-          <Button onClick={() => setButtonPopup(true)} color="inherit" >
+          <Button onClick={() => setButtonPopup(true)} color="inherit" sx={{fontFamily: 'monospace'}}>
             How to Use
           </Button>
           <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-            <h2 style={{ color: 'black' }}>How to Use</h2>
-               <h4 style={{color : 'black'}}>Enter an ethical question and select whether you want an answer that is for, against, or neutral. Once you select what response you want wait for the generative AI to create a response and It will be displayed on the screen.</h4>
+            <h2 style={{ color: 'black' , fontFamily: 'monospace'}}>How to Use</h2>
+               <h4 style={{color : 'black' , fontFamily: 'monospace'}}>Enter an ethical question and select whether you want an answer that is for, against, or neutral. Once you select what response you want wait for the generative AI to create a response and It will be displayed on the screen.</h4>
           </Popup>
         </Toolbar>
       </AppBar>
@@ -105,23 +105,23 @@ function Home() {
         />
       </Box>
       <Box style={{ width: "100%", height: "100%", display: "flex", flexDirection: "row", gap: "2rem", alignItems: "center", justifyContent: "center" }}>
-        <Button style={{ width: "10rem", backgroundColor: "green" }} variant="contained" value="for" onClick={handleClick} disabled={loading}>
+        <Button style={{ width: "10rem", backgroundColor: "black", fontFamily: 'monospace'}} variant="contained" value="for" onClick={handleClick} disabled={loading}>
           For
         </Button>
-        <Button style={{ width: "10rem", backgroundColor: "red" }} variant="contained" color="secondary" value="against" onClick={handleClick} disabled={loading}>
-          Against
-        </Button>
-        <Button style={{ width: "10rem" }} variant="contained" color="primary" value="neutral" onClick={handleClick} disabled={loading}>
+        <Button style={{ width: "10rem", backgroundColor: "grey", fontFamily: 'monospace'}} variant="contained" color="primary" value="neutral" onClick={handleClick} disabled={loading}>
           Neutral
+        </Button>
+        <Button style={{ width: "10rem", backgroundColor: "black", fontFamily: 'monospace'}} variant="contained" color="secondary" value="against" onClick={handleClick} disabled={loading}>
+          Against
         </Button>
       </Box>
       <div className="result">
         {loading && (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
-             <CircularProgress/>
+             <CircularProgress sx={{color: 'black'}}/>
           </div>)}
         {result && (
-          <Alert style={{ fontSize: '20px' }}>
+          <Alert style={{ fontSize: '20px', fontFamily: 'monospace', color: 'white', marginTop: '30px', backgroundColor: 'black'}}>
             {result}
           </Alert>
         )}
