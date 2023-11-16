@@ -79,6 +79,10 @@ function Home() {
               <p style={{color : 'black'}}>Christo Karahalios is a Junior attending Southern Methodist University, majoring in Computer Science, Data Science, and Economics. He loves to code and solve problems, specializing in C++. He also enjoys creating algorithmic solutions in Rust.</p>
               <h4 style={{color : 'black'}}>Ben King</h4>
               <p style={{color : 'black'}}>Ben King is a sophmore at SMU with plans of majoring or minoring in computer science. He grew up in Atlanta, GA. He likes to fish and play soccer along with coding. </p>
+          <img src="/Safwan.png"/>
+          <img src="/Michael.png"/>
+          <img src="/Christo.png"/>
+          <img src="/Ben.png"/>
           </Popup>
           <Button onClick={() => setButtonPopup(true)} color="inherit" >
             How to Use
