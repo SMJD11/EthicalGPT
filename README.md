@@ -1,6 +1,6 @@
-# EthicalAi
+# EthicalAI
 
-EthicalAi is a project that aims to better understand the pros and cons of ethical choices using AI models.
+EthicalAI is a project that aims to better understand the pros and cons of ethical choices using AI models.
 
 ## Features
 
